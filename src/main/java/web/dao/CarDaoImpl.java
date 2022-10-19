@@ -1,13 +1,12 @@
 package web.dao;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.ResponseBody;
 import web.model.Car;
 
 import java.util.List;
 
 @Repository
-public class CarDAO {
+public class CarDaoImpl implements CarDao{
 
     Car car1 = new Car("Lada", 4, "Black");
     Car car2 = new Car("BMW", 1, "Red");
@@ -17,6 +16,7 @@ public class CarDAO {
 
     List<Car> cars = List.of(car1, car2, car3, car4, car5);
 
+    @Override
     public List<Car> getCars() {
         return cars;
     }
